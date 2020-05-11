@@ -7,7 +7,7 @@ class Config:
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     SECRET_KEY = os.urandom(69)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://nairdaee:mutemuas2001@localhost/blogs'
     #email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
