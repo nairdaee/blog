@@ -62,7 +62,7 @@ def new_comment(blog_id):
 @main.route('/myblogs', methods=['GET', 'POST'])
 @login_required
 def my_blogs():
-    blog = current_user._get_current_object().id
+    user = current_user._get_current_object().id
     blogs = Blog.query.filter_by(user_p=user)
     return render_template('category.html', blogs=blogs)
     
