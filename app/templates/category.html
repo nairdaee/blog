@@ -1,0 +1,54 @@
+% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
+{% block content %}
+
+<div class="body"
+    style="background-size:cover;background-repeat: no-repeat ;background-image:url(https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjNw97w_M_iAhWs4YUKHZ6YBTkQjRx6BAgBEAU&url=https%3A%2F%2Fthemes.shopify.com%2Fthemes%2Flabel%2Fstyles%2Frecord&psig=AOvVaw34iC5ILGYtHbdRIWhDXgf1&ust=1559742679982580)">
+    <div class="container" style="background-color: rgb(201, 197, 197);">
+        <div class="row">
+            {% for pitch in pitches %}
+            <div class="col-md-6">
+                <div class="card card-cascade">
+                    <div class="view view-cascade gradient-card-header" style= "background-color: rgb(28, 136, 139);">
+                        <div class="title text-center">
+                            <h2 class="card-header-title mb-3">{{blog.title}}</h2>
+                        </div>
+                        <p class="card-header-subtitle mb-0">Category: {{blog.category}}</p>
+
+                    </div>
+                    <div class="card-body card-body-cascade text-center">
+                        <h4 class=" mb-2 ">{{blog.description}}</h4>
+                        <p class="text-right">Posted by :{{blog.user.username}}</p>
+
+                        <hr>
+
+                        <div class=""><a href="{{url_for('main.new_comment',blog_id = blog.id)}}"> View/Give feedback</a>
+                        </div>
+
+                    </div>
+                    <div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
+                        <ul class="list-unstyled list-inline font-small">
+                            <li class="list-inline-item pr-2 white-text"><i
+                                    class="far fa-clock pr-1"></i>{{blog.posted_p}}</li>
+                            <input type=hidden value="{{ next or '' }}" name=next>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+
+            {% endfor %}
+        </div>
+
+        <a  class= "linkstyle" style="background-color: rgb(10, 110, 110) ; color:white;font-size: 20pt; border-radius:35px; padding: 5px;" href="/pitch/new">ADD PITCH</a>
+        {% endblock %}
+    </div>
+</div>
+
+
+(% endblock %)
