@@ -7,25 +7,25 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="jumbotron" style="background-image: url(https://images6.alphacoders.com/523/523112.jpg);
+    <div class="jumbotron" style="background-image: url(https://www.designyourway.net/blog/wp-content/uploads/2018/01/computer-background-cool-desktop-landscape-lake-desktops-moon-wallpapers-backgrounds-walls-reflection.jpg);
                                    background-repeat: no-repeat;
                                    background-size: cover">
         <div class="text-white text-center py-5 px-4 my-5">
             <div>
                 <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Welcome to My Blog</strong></h2>
-                <p class="mx-5 mb-5">Here we value creativity and hence aim at immersing our users in unlimited access to such and so much more through various types of pitches </p>
+                <p class="mx-5 mb-5">This is an opportunity to teach other people knowldege that one has acquired...there's no better way to express your ideas and opinions than with a personal blog</p>
                 <hr>
-                <a class="btn btn-outline-white btn-md" href="/life-lessons"><i class="fas fa-clone left"></i>
+                <a class="btn"  style="background-color: white;color:black;border-radius: 38px;" href="/life-lessons">
                     <h4>Life lessons</h4>
                 </a>
-                <a class="btn btn-outline-white btn-md" href="/entertainment"><i class="fas fa-clone left"></i>
+                <a class="btn" style="background-color: white;color:black;border-radius: 38px;" href="/entertainment">
                     <h4>Entertainment</h4>
                 </a>
-                <a class="btn btn-outline-white btn-md" href="/motivational"><i class="fas fa-clone left"></i>
+                <a class="btn" style="background-color: white;color:black;border-radius: 38px;" href="/motivational">
                     <h4>Motivational</h4>
                 </a>
-                <a class="btn btn-outline-white btn-md" href="/blog/new"><i class="fas fa-clone left"></i>
-                    <h4>New pitch</h4>
+                <a class="btn" style="background-color: white;color:black;border-radius: 38px;" href="/blog/new">
+                    <h4>New blog</h4>
                 </a>
             </div>
         </div>
@@ -41,18 +41,28 @@
         </div>
     </div>
     <!-- Card Dark -->
-
+    <div class= "quotes" style="float:right;margin-left:50%;color: white;background-color: rgb(88, 53, 29);border-radius: 30px;">
+        <h4 style= "text-align: center;"><u>Get inspired</u></h4>
+        <p class="quote-text " style="font-weight: bolder; font-size:10pt;;"> 
+            {{quote.quote}}
+          </p>
+          <hr />
+          <div class="quotes">
+            <p class="custom">
+             ~ {{quote.author}} ~
+            </p>
+        </div>
+    </div>
+   
 </div>
-
-
-
-
+<br>
+<br>
+<hr>
     <!-- Copyright info-->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://github.com/nairdaee"> Adrian Etenyi</a>
+    <div class="footer-copyright text-center py-3" style="background-color:rgb(0, 0, 0);border-radius: 38px;margin-left:40%;margin-right:40%">© 2020 Copyright:
+        <a href="https://github.com/nairdaee" style="color:blanchedalmond"> Adrian Etenyi</a>
     </div>
     <!-- Copyright info-->
-
 
 
 {% endblock %}   

@@ -30,7 +30,7 @@ class Blog(db.Model):
 
     @classmethod
     def get_blog(cls,id):
-        blogs = Blog.query.order_by(blog_id=id).desc().all()
+        blog = Blog.query.order_by(blog_id=id).desc().all()
         return blogs
 
 class Comment(db.Model):
@@ -81,3 +81,13 @@ class User(UserMixin,db.Model):
 
     def __repr__(self):
         return f'User {self.username}'
+
+
+class Quote:
+    """
+    Adds quote class derived from the API
+    """
+    def __init__(self, author, quote):
+        self.author = author
+        self.quote = quote
+   

@@ -1,9 +1,10 @@
 from . import main
 from flask import render_template,request,redirect,url_for, abort
-from ..models import Blog, Comment, User
+from ..models import Blog, Comment, User, Quote
 from flask_login import login_required,current_user
 from .. import db, photos
 from .forms import BlogForm,UpdateProfile, CommentForm
+from ..requests import get_quote
 
 @main.route('/')
 def index():
@@ -12,7 +13,8 @@ def index():
     View root page function that returns the index page and its data
     '''
     title = 'Home - Welcome to My Blog'
-    return render_template('index.html' , title = title)
+    quote = get_quote()
+    return render_template('index.html' , title = title, quote = quote)
 
 @main.route('/<cat>', methods=['GET', 'POST'])
 def pickup(cat):
@@ -38,7 +40,6 @@ def new_blog():
         blogs = Blog.query.filter_by(category=category).order_by(Blog.posted_p.desc()).all()
         return render_template('category.html', blogs=blogs)
     return render_template('new_blog.html', form=form)
-
 
 @main.route('/comment/new/<int:blog_id>', methods = ['GET','POST'])
 @login_required

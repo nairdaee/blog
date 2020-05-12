@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style= "background-color:black;border-radius: 0px;">
     <a class="navbar-brand" href="/"> </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -12,21 +12,21 @@
           
             <li class="nav-item">
                 <a class="nav-link" href="/myblogs">
-                    <h4>My blogs</h4>
+                    <h4 style = "color:aliceblue;">My blogs</h4>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/blog/new">
-                    <h4>Add blog</h4>
+                    <h4 style = "color:aliceblue;">Add blog</h4>
                 </a>
             </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <h4>Categories</h4>
+                    <h4 style = "color:aliceblue;">Categories</h4>
                 </a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="color: white">
                     <a class="dropdown-item" href="/entertainment">Entertainment</a>
                     <a class="dropdown-item" href="/motivational">Motivational</a>
                     <a class="dropdown-item" href="/life-lessons">Life lessons</a>
@@ -36,18 +36,18 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/"><i class="fas fa-home fa-3x"></i>
+                <a class="nav-link" href="/"><i class="fas fa-home fa-3x black" style= "background-color:black;color:blanchedalmond;border-radius: 20px"></i>
                 </a>
             </li>
             <li><a class="nav-link" href="{{url_for('main.profile',uname=current_user.username)}}"><i
-                        class="fas fa-chalkboard-teacher fa-3x"></i>
-                    <p>Profile</p>
+                        class="fas fa-chalkboard-teacher fa-3x" style="color:white"></i>
+                    <p style="color:white">Profile</p>
                 </a></li>
-            <li><a class="nav-link" href="{{url_for('auth.login')}}"><i class="fas fa-sign-in-alt fa-3x"></i>
-                    <p>Sign in</p>
+            <li><a class="nav-link" href="{{url_for('auth.login')}}"><i class="fas fa-sign-in-alt fa-3x" style="color:white"></i>
+                    <p style="color:white">Sign in</p>
                 </a></li>
-            <li><a class="nav-link" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt fa-3x"></i>
-                    <p>Sign out</p>
+            <li><a class="nav-link" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt fa-3x" style="color:white"></i>
+                    <p style="color:white">Sign out</p>
                 </a></li>
 
 

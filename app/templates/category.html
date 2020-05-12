@@ -1,19 +1,24 @@
-% extends 'base.html' %}
+{% extends 'base.html' %}
+
 {% import 'bootstrap/wtf.html' as wtf %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock %}
 
 
 {% block content %}
 
 <div class="body"
     style="background-size:cover;background-repeat: no-repeat ;background-image:url(https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjNw97w_M_iAhWs4YUKHZ6YBTkQjRx6BAgBEAU&url=https%3A%2F%2Fthemes.shopify.com%2Fthemes%2Flabel%2Fstyles%2Frecord&psig=AOvVaw34iC5ILGYtHbdRIWhDXgf1&ust=1559742679982580)">
-    <div class="container" style="background-color: rgb(201, 197, 197);">
+    <div class="container" style="background-size:cover;background-repeat: no-repeat ;background-image:url(https://i.pinimg.com/736x/4c/06/d9/4c06d9a333bfb433738891684dc01fc0--paper-backdrop-backdrop-ideas.jpg);">
         <div class="row">
             {% for blog in blogs %}
             <div class="col-md-6">
                 <div class="card card-cascade">
-                    <div class="view view-cascade gradient-card-header" style= "background-color: rgb(28, 136, 139);">
+                    <div class="view view-cascade gradient-card-header" style= "background-size:cover;background-repeat: no-repeat ;background-image: url(https://www.designyourway.net/blog/wp-content/uploads/2018/01/computer-background-cool-desktop-landscape-lake-desktops-moon-wallpapers-backgrounds-walls-reflection.jpg);">
                         <div class="title text-center">
-                            <h2 class="card-header-title mb-3">{{blog.title}}</h2>
+                            <h2 class="card-header-title mb-3" style="color:white;font-weight: bolder;">{{blog.title}}</h2>
                         </div>
                         <p class="card-header-subtitle mb-0">Category: {{blog.category}}</p>
 
@@ -24,9 +29,8 @@
 
                         <hr>
 
-                        <div class=""><a href="{{url_for('main.new_comment',blog_id = blog.id)}}"> View/Give feedback</a>
+                        <div class=""><a href="{{url_for('main.new_comment',blog_id = blog.id)}}" > View/Give feedback</a>
                         </div>
-
                     </div>
                     <div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
                         <ul class="list-unstyled list-inline font-small">
@@ -43,7 +47,7 @@
             {% endfor %}
         </div>
 
-        <a  class= "linkstyle" style="background-color: rgb(10, 110, 110) ; color:white;font-size: 20pt; border-radius:35px; padding: 5px;" href="/pitch/new">ADD PITCH</a>
+        <a  class= "linkstyle" style="background-color: black;color:white;border-radius: 38px;font-size: 20pt; border-radius:35px; padding: 5px;margin-left: 10%;margin-right: 20%;" href="/blog/new">MAKE YOUR OWN</a>
         {% endblock %}
     </div>
 </div>
